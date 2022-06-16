@@ -22,6 +22,11 @@ body {
 hr {
   border-top: 1px solid white;
 }
+.search-btn {
+  color: white;
+  background-color: inherit;
+  border: none;
+}
 .logo-name {
   font-size: 35px;
 }
