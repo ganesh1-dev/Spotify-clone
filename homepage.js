@@ -23,13 +23,19 @@ const loadAlbums = async (query) => {
     const viewImages = data.slice(0, 12)
     viewImages.forEach((song) => {
       const songs = document.getElementById("menu");
-      songs.innerHTML += `<div class="col-2 mb-2 d-flex">
-                                    <div class="album-img">
-                                        <img class="img-fluid rounded" src="${song.album.cover_medium}" alt="${song.album.title}" width="100%" >
-                                      </div>
-                                        <div class="col-10 album-name">
-                                            <span>${song.artist.name}</span>
-                                        </div>
+      songs.innerHTML += `<div class="col-3 mb-2 d-flex">
+                            <div class="card mb-3">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img class="img-fluid" src="${song.album.cover_medium}" alt="${song.album.title}">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <p class="card-title align-middle">${song.album.title}</p>
+                                </div>
+                              </div>
+                            </div>
+    </div>
                                 </div>`;
     });
   } catch (error) {
@@ -39,7 +45,7 @@ const loadAlbums = async (query) => {
 
 
 
-const loadRecently = async (value) => {
+const loadRecently = async (query) => {
   try {
     const options = {
       method: "GET",
@@ -49,7 +55,7 @@ const loadRecently = async (value) => {
       },
     };
     const getSongs = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + value,
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`,
       options
     );
 
@@ -62,11 +68,13 @@ const loadRecently = async (value) => {
     viewImages.forEach((song) => {
       const songs = document.getElementById("recentlyViewed");
       songs.innerHTML += `<div class="col-2 mb-2 ">
-                                    
-                                        <img class="img-fluid rounded" src="${song.album.cover_medium}" alt="${song.album.title}" width="100%">
-                                        
-                                        <div class="col-10 album-name">
-                                            <span>${song.album.title}</span>
+                              <div class="card" >
+                              <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
+                                  <div class="card-body">
+                                    <h5 class="card-title">${song.album.title}</h5>
+                                    <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
+      </div>
+    </div>
                                         
                                 </div>`;
     });
@@ -77,7 +85,7 @@ const loadRecently = async (value) => {
 
 
 
-const loadSongsToTry = async () => {
+const loadSongsToTry = async (query) => {
   try {
     const options = {
       method: "GET",
@@ -87,7 +95,7 @@ const loadSongsToTry = async () => {
       },
     };
     const getSongs = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem",
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`,
       options
     );
 
@@ -102,7 +110,6 @@ const loadSongsToTry = async () => {
       songs.innerHTML += `<div class="col-2 mb-2 ">
                                     
                                         <img class="img-fluid rounded" src="${song.album.cover_medium}" alt="${song.album.title}" width="100%">
-                                        
                                         <div class="col-10 album-name">
                                             <span>${song.album.title}</span>
                                         
@@ -150,8 +157,8 @@ const favouriteSongs = async (query) => {
 
 window.onload = async () => {
   loadAlbums("love")
-  loadRecently("queen")
-  loadSongsToTry()
+  loadRecently("pop")
+  loadSongsToTry("country")
   favouriteSongs("romantic")
 }
 

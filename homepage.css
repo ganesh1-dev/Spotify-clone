@@ -25,17 +25,25 @@ hr {
 .logo-name {
   font-size: 35px;
 }
-.album-img {
-  width: 30px;
-  height: 30px;
+.card {
+  background-color: inherit;
+}
+.card h5 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 img:hover {
   box-shadow: 5px 3px 5px grey;
 }
+
 .album-name {
   flex-grow: 1;
   padding-left: 1rem;
-  font-size: 12px;
+  font-size: 1px;
+}
+.card-title {
+  padding: 0px;
 }
 footer {
   display: flex;
