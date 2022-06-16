@@ -1,12 +1,7 @@
 /** @format */
-window.onload = async () => {
-  loadAlbums("all")
-  loadRecently("queen")
-  loadSongsToTry()
-  favouriteSongs("eminem")
-}
 
-const loadAlbums = async () => {
+
+const loadAlbums = async (query) => {
   try {
     const options = {
       method: "GET",
@@ -16,7 +11,7 @@ const loadAlbums = async () => {
       },
     };
     const getSongs = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=all",
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`,
       options
     );
 
@@ -120,7 +115,7 @@ const loadSongsToTry = async () => {
 
 
 
-const favouriteSongs = async () => {
+const favouriteSongs = async (query) => {
   try {
     const options = {
       method: "GET",
@@ -131,7 +126,7 @@ const favouriteSongs = async () => {
     }
 
     const response = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=all",
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`,
       options
     );
 
@@ -153,6 +148,12 @@ const favouriteSongs = async () => {
 }
 
 
+window.onload = async () => {
+  loadAlbums("love")
+  loadRecently("queen")
+  loadSongsToTry()
+  favouriteSongs("romantic")
+}
 
 
 
