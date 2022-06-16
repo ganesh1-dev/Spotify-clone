@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+
+    <title>Spotify Album Page</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: #ececec;
+        }
+
+        .container {
+            margin-right: 0px;
+        }
+
+        .profile-picture-top {
+            border-radius: 50%;
+            height: 20px;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav mt-3">
+        <div class="d-flex justify-content-between">
+            <div class="arrows">
+                <i class="arrow1 bi bi-chevron-compact-left text-white"></i>
+                <i class="arrow2 bi bi-chevron-compact-right text-white"></i>
+            </div>
+            <div class="navbar-col profile-picture-button">
+                <div class="">
+                    <div class="profile-picture-dropdown d-flex">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                            alt="Profile Picture" class="profile-picture-top" />
+                        <span class="pr-3 text-white">Diego 'Ziba' Ba...</span>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="wrapper flex-grow-1 pl-2 mt-4">
+        <section id="album-page-hero">
+            <div class="container-fluid album-container">
+                <div class="row">
+                    <div class="col-2 jumbotron">
+                        <img id="hero-img"
+                            src="https://i.pinimg.com/1200x/21/b1/c7/21b1c7f4af7c339fff746041a0e2403f.jpg"
+                            class="img-fluid" alt="Hybrid theory album cover" />
+                    </div>
+                    <div class="col-10 title-section1">
+                        <div class="d-flex flex-column justify-content-end h-100">
+                            <small>ALBUM</small>
+                            <h1>Bohemain Rhapsody(Original Soundtrack)</h1>
+                            <div>
+                                <p>
+                                    <small><strong>
+                                            <img src="https://upload.wikimedia.org/wikipedia/pt/9/9f/Bohemian_Rhapsody.png"
+                                                height="22px" alt="" style="border-radius: 2rem"
+                                                alt="Original Album Cover" />
+                                            Queen . </strong>2018<strong> . </strong>22 songs<strong>
+                                            ,
+                                        </strong>
+                                        1hr 19 min
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="play-button">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1 mt-4 ml-3">
+                        <i class="bi bi-play-circle-fill big-play-button" id="play-pause-button-id"></i>
+                    </div>
+
+                    <div class="col-1 mt-4 ml-3">
+                        <i id="heart-icon-1" class="bi bi-heart"></i>
+                    </div>
+
+                    <div class="col-1 mt-4 ml-3">
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="headings" class="d-flex mt-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col d-flex">
+                        <p>#</p>
+                        <p>TITLE</p>
+                        <div class="d-flex">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+
+        <section id="album-track-list">
+            <div class="container-fluid ml-4">
+                <div class="row newrow1">
+                    <div id="album-track-list" class="col-5">
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">1</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">20th century fox
+                                    Fanfare</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">2</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Somebody To
+                                    Love</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">3</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Doing All Right-
+                                    ...Revisited</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">4</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Keep Yourself Alive - Live At
+                                    The Rainbow</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">5</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Killer
+                                    Queen</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">6</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Fat Bottomed Girls - Live In
+                                    Paris</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">7</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Bohemain
+                                    Rhaposdy</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">8</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Now I'm Here - Live At The
+                                    Hammersmith Odeon</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                        <div class="ml-3 pb-4">
+                            <span class="track-num">9</span>
+                            <span class="album-song ml-4"><strong class="track-decoration">Creazy Little Thing Called
+                                    Love</strong><br /><span class="singer-name">Queen</span></span>
+                        </div>
+                    </div>
+
+                    <div id="time" class="col-1">
+                        <div class="ml-3 pb-5">2:56</div>
+                        <div class="ml-3 pb-5">4:56</div>
+                        <div class="ml-3 pb-5">3:16</div>
+                        <div class="ml-3 pb-5">3:56</div>
+                        <div class="ml-3 pb-5">2:59</div>
+                        <div class="ml-3 pb-5">4:37</div>
+                        <div class="ml-3 pb-5">5:56</div>
+                        <div class="ml-3 pb-5">4:25</div>
+                        <div class="ml-3 pb-5">4:25</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+
+</html>
