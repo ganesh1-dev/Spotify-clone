@@ -73,9 +73,8 @@ const loadRecently = async (query) => {
                                   <div class="card-body">
                                     <h5 class="card-title">${song.album.title}</h5>
                                     <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
-      </div>
-    </div>
-                                        
+                              </div>
+                              </div>       
                                 </div>`;
     });
   } catch (error) {
@@ -108,12 +107,14 @@ const loadSongsToTry = async (query) => {
     viewImages.forEach((song) => {
       const songs = document.getElementById("tryThis");
       songs.innerHTML += `<div class="col-2 mb-2 ">
-                                    
-                                        <img class="img-fluid rounded" src="${song.album.cover_medium}" alt="${song.album.title}" width="100%">
-                                        <div class="col-10 album-name">
-                                            <span>${song.album.title}</span>
-                                        
-                                </div>`;
+                              <div class="card" >
+                                  <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
+                                  <div class="card-body">
+                                    <h5 class="card-title">${song.album.title}</h5>
+                                    <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
+                                  </div>
+                              </div>       
+                          </div>`;
     });
   } catch (error) {
     console.log(error);
@@ -140,7 +141,7 @@ const favouriteSongs = async (query) => {
     const songs = await response.json();
     console.log(songs)
     const { data } = songs
-    const displaySongs = data.slice(0, 12)
+    const displaySongs = data.slice(0, 20)
     displaySongs.forEach((song) => {
       const popularAlbums = document.getElementById("favourites")
       popularAlbums.innerHTML +=
