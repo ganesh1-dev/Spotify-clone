@@ -30,6 +30,14 @@
             height: 20px;
             width: 25px;
         }
+
+        .btn {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            display: inline-block;
+            color: white;
+        }
     </style>
 </head>
 
@@ -90,15 +98,19 @@
         <section id="play-button">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-1 mt-4 ml-3">
-                        <i class="bi bi-play-circle-fill big-play-button" id="play-pause-button-id"></i>
+                    <div class="col-1 mt-3 ml-1">
+                        <button type="button" id="button_play" class="btn" onclick='buttonPlayPress()'>
+                            <i class="fa fa-play"></i>
+                        </button>
                     </div>
 
-                    <div class="col-1 mt-4 ml-3">
-                        <i id="heart-icon-1" class="bi bi-heart"></i>
+                    <div class="col-1 mt-4 ml-0">
+                       
+                            <i id="heart" class="bi bi-heart" onclick='buttonHeart()'></i>
+                   
                     </div>
 
-                    <div class="col-1 mt-4 ml-3">
+                    <div class="col-1 mt-4 ml-0">
                         <i class="bi bi-three-dots"></i>
                     </div>
                 </div>
@@ -187,7 +199,36 @@
             </div>
         </section>
     </main>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- d3-bootstrap -->
+    <script src="https://cdn.jsdelivr.net/gh/sebt3/d3-bootstrap@0.5.2/dist/d3-bootstrap-withextra.min.js"></script>
 
+    <script>
+        var state = 'stop';
+        function buttonPlayPress() {
+
+            if (state == 'stop') {
+                state = 'play';
+
+                var button = d3.select("#button_play").classed('btn-success', true);
+                button.select("i").attr('class', "fa fa-pause");
+            }
+            else if (state == 'play' || state == 'resume') {
+                state = 'pause';
+                d3.select("#button_play i").attr('class', "fa fa-play");
+            }
+            else if (state == 'pause') {
+                state = 'resume';
+                d3.select("#button_play i").attr('class', "fa fa-pause");
+            }
+            console.log("button play pressed, play was " + state);
+        }
+
+        function buttonHeart()
+        {
+           
+        }
+    </script>
 
 </body>
 
