@@ -1,7 +1,7 @@
 /** @format */
 window.onload = async () => {
   loadAlbums("all")
-  loadRecently()
+  loadRecently("queen")
   loadSongsToTry()
   favouriteSongs("eminem")
 }
@@ -30,8 +30,8 @@ const loadAlbums = async () => {
       const songs = document.getElementById("menu");
       songs.innerHTML += `<div class="col-2 mb-2 d-flex">
                                     <div class="album-img">
-                                        <img class="img-fluid rounded" src="${song.album.cover_small}" alt="${song.album.title}" >
-                                        </div>
+                                        <img class="img-fluid rounded" src="${song.album.cover_medium}" alt="${song.album.title}" width="100%" >
+                                      </div>
                                         <div class="col-10 album-name">
                                             <span>${song.artist.name}</span>
                                         </div>
@@ -68,7 +68,7 @@ const loadRecently = async (value) => {
       const songs = document.getElementById("recentlyViewed");
       songs.innerHTML += `<div class="col-2 mb-2 ">
                                     
-                                        <img class="img-fluid rounded" src="${song.album.cover_small}" alt="${song.album.title}" width="100%">
+                                        <img class="img-fluid rounded" src="${song.album.cover_medium}" alt="${song.album.title}" width="100%">
                                         
                                         <div class="col-10 album-name">
                                             <span>${song.album.title}</span>
@@ -82,7 +82,7 @@ const loadRecently = async (value) => {
 
 
 
-const loadSongsToTry = async (value) => {
+const loadSongsToTry = async () => {
   try {
     const options = {
       method: "GET",
@@ -106,7 +106,7 @@ const loadSongsToTry = async (value) => {
       const songs = document.getElementById("tryThis");
       songs.innerHTML += `<div class="col-2 mb-2 ">
                                     
-                                        <img class="img-fluid rounded" src="${song.album.cover_small}" alt="${song.album.title}" width="100%">
+                                        <img class="img-fluid rounded" src="${song.album.cover_medium}" alt="${song.album.title}" width="100%">
                                         
                                         <div class="col-10 album-name">
                                             <span>${song.album.title}</span>
@@ -142,7 +142,7 @@ const favouriteSongs = async () => {
     displaySongs.forEach((song) => {
       const popularAlbums = document.getElementById("favourites")
       popularAlbums.innerHTML +=
-        `<span><p>${song.title_short}</p></span>`
+        `<span><p>${song.artist.name}</p></span>`
     })
 
 
