@@ -38,8 +38,8 @@
             display: inline-block;
             color: white;
         }
-        .red-color
-        {
+
+        .red-color {
             color: red;
         }
     </style>
@@ -50,8 +50,8 @@
     <div class="top-nav mt-3">
         <div class="d-flex justify-content-between">
             <div class="arrows">
-                <i class="arrow1 bi bi-chevron-compact-left text-white"></i>
-                <i class="arrow2 bi bi-chevron-compact-right text-white"></i>
+                <i class="bi bi-arrow-left-circle"></i>
+                <i class="bi bi-arrow-right-circle"></i>
             </div>
             <div class="navbar-col profile-picture-button">
                 <div class="">
@@ -110,7 +110,7 @@
 
                     <div class="col-1 mt-4 ml-0">
                         <button type="button" id="heart" class="btn" onclick='buttonHeart()'>
-                            <i id="heart" class="bi bi-heart" ></i>
+                            <i id="heart" class="bi bi-heart"></i>
                         </button>
                     </div>
 
@@ -121,20 +121,23 @@
             </div>
         </section>
 
-        <section id="headings" class="d-flex mt-4">
+
+        <section id="track-list-icons">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col d-flex">
-                        <p>#</p>
-                        <p>TITLE</p>
-                        <div class="d-flex">
+                <div class="row ml-2">
+                    <div class="col-11 justify-content-start">
+                        <span class="ml-2" class="title-song"><span class="hashtag-title">#</span> TITLE</span>
+                    </div>
+                    <div id="time-icon" class="col-1 album-col justify-content-end">
+                        <span class="clock-icon">
                             <i class="bi bi-clock"></i>
-                        </div>
+                        </span>
                     </div>
                 </div>
-                <hr>
+                <hr class="hr-page" />
             </div>
         </section>
+
 
         <section id="album-track-list">
             <div class="container-fluid ml-4">
@@ -188,6 +191,10 @@
                         </div>
                     </div>
 
+                    <div id="album-music-player" class="col-6">
+                        <div class="d-flex flex-column"></div>
+                    </div>
+
                     <div id="time" class="col-1">
                         <div class="ml-8 pb-5 ">2:56</div>
                         <div class="ml-3 pb-5">4:56</div>
@@ -207,38 +214,7 @@
     <!-- d3-bootstrap -->
     <script src="https://cdn.jsdelivr.net/gh/sebt3/d3-bootstrap@0.5.2/dist/d3-bootstrap-withextra.min.js"></script>
 
-    <script>
-        var state = 'stop';
-        function buttonPlayPress() {
-
-            if (state == 'stop') {
-                state = 'play';
-
-                var button = d3.select("#button_play").classed('btn-success', true);
-                button.select("i").attr('class', "fa fa-pause");
-            }
-            else {
-                state = 'stop';
-                d3.select("#button_play i").attr('class', "fa fa-play");
-            }
-
-            console.log("button play pressed, play was " + state);
-        }
-        var heart = 'stop';
-        function buttonHeart() {
-            if (heart == 'stop') {
-                heart = 'play';
-                var button = d3.select("#heart").classed('btn-success', true);
-                button.select("i").attr('class', "bi bi-heart");
-            }
-            else {
-                heart = 'stop';
-                d3.select("#heart i").attr('class', "bi bi-heart-fill red-color");
-            }
-
-            console.log("button play pressed, play was " + heart);
-        }
-    </script>
+    <script src="albumpage.js"></script>
 
 </body>
 
