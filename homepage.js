@@ -24,19 +24,21 @@ const loadAlbums = async (query) => {
     viewImages.forEach((song) => {
       const songs = document.getElementById("menu");
       songs.innerHTML += `<div class="col-3 mb-2 d-flex">
-                            <div class="card mb-3">
-                            <div class="row no-gutters">
-                              <div class="col-md-4">
-                                <img class="img-fluid" src="${song.album.cover_medium}" alt="${song.album.title}">
-                              </div>
-                              <div class="col-md-8">
-                                <div class="card-body">
-                                  <p class="card-title align-middle">${song.album.title}</p>
+                            <a href="./albumpage.html?albumID=${song.album.id}">
+                              <div class="card mb-3">
+                              <div class="row no-gutters">
+                                <div class="col-md-4">
+                                  <img class="img-fluid" src="${song.album.cover_medium}" alt="${song.album.title}">
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="card-body">
+                                    <p class="card-title align-middle">${song.album.title}</p>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-    </div>
-                                </div>`;
+                              </div>
+                            </a>
+                          </div>`;
     });
   } catch (error) {
     console.log(error);
@@ -68,14 +70,16 @@ const loadRecently = async (query) => {
     viewImages.forEach((song) => {
       const songs = document.getElementById("recentlyViewed");
       songs.innerHTML += `<div class="col-2 mb-2 ">
-                              <div class="card" >
-                              <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
-                                  <div class="card-body">
-                                    <h5 class="card-title">${song.album.title}</h5>
-                                    <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
-                              </div>
-                              </div>       
-                                </div>`;
+                              <a href="./albumpage.html?albumID=${song.album.id}">
+                                <div class="card" >
+                                <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
+                                    <div class="card-body">
+                                      <h5 class="card-title">${song.album.title}</h5>
+                                      <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
+                                </div>
+                                </div>
+                              </a>      
+                          </div>`;
     });
   } catch (error) {
     console.log(error);
@@ -107,13 +111,15 @@ const loadSongsToTry = async (query) => {
     viewImages.forEach((song) => {
       const songs = document.getElementById("tryThis");
       songs.innerHTML += `<div class="col-2 mb-2 ">
-                              <div class="card" >
-                                  <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
-                                  <div class="card-body">
-                                    <h5 class="card-title">${song.album.title}</h5>
-                                    <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
-                                  </div>
-                              </div>       
+                              <a href="./albumpage.html?albumID=${song.album.id}">
+                                <div class="card" >
+                                    <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
+                                    <div class="card-body">
+                                      <h5 class="card-title">${song.album.title}</h5>
+                                      <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
+                                    </div>
+                                </div>
+                              </a>       
                           </div>`;
     });
   } catch (error) {
