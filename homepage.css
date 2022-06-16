@@ -1,0 +1,27 @@
+/** @format */
+body {
+  color: white;
+  background: rgb(39, 39, 39);
+}
+.container {
+  max-width: 100%;
+  margin: 0, auto;
+}
+.arrow-icons {
+  font-size: 20px;
+}
+.nav-buttons {
+  border-radius: 20px;
+}
+.side-icons {
+  font-size: 20px;
+}
+.spotify-icon {
+  font-size: 35px;
+}
+.logo-name {
+  font-size: 35px;
+}
+span {
+  font-size: 20px;
+}
