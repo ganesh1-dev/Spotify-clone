@@ -45,8 +45,6 @@ const loadAlbums = async (query) => {
   }
 };
 
-
-
 const loadRecently = async (query) => {
   try {
     const options = {
@@ -85,8 +83,6 @@ const loadRecently = async (query) => {
     console.log(error);
   }
 };
-
-
 
 const loadSongsToTry = async (query) => {
   try {
