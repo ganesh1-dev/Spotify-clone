@@ -1,4 +1,10 @@
 /** @format */
+window.onload = async () => {
+  loadAlbums("all")
+  loadRecently()
+  loadSongsToTry()
+  favouriteSongs("eminem")
+}
 
 const loadAlbums = async () => {
   try {
@@ -24,7 +30,7 @@ const loadAlbums = async () => {
       const songs = document.getElementById("menu");
       songs.innerHTML += `<div class="col-2 mb-2 d-flex">
                                     <div class="album-img">
-                                        <img class="img-fluid" src="${song.album.cover_small}" alt="${song.album.title}" >
+                                        <img class="img-fluid rounded" src="${song.album.cover_small}" alt="${song.album.title}" >
                                         </div>
                                         <div class="col-10 album-name">
                                             <span>${song.artist.name}</span>
@@ -36,7 +42,7 @@ const loadAlbums = async () => {
   }
 };
 
-loadAlbums()
+
 
 const loadRecently = async (value) => {
   try {
@@ -62,7 +68,7 @@ const loadRecently = async (value) => {
       const songs = document.getElementById("recentlyViewed");
       songs.innerHTML += `<div class="col-2 mb-2 ">
                                     
-                                        <img class="img-fluid" src="${song.album.cover_small}" alt="${song.album.title}" width="100%">
+                                        <img class="img-fluid rounded" src="${song.album.cover_small}" alt="${song.album.title}" width="100%">
                                         
                                         <div class="col-10 album-name">
                                             <span>${song.album.title}</span>
@@ -74,7 +80,7 @@ const loadRecently = async (value) => {
   }
 };
 
-loadRecently("eminem")
+
 
 const loadSongsToTry = async (value) => {
   try {
@@ -86,7 +92,7 @@ const loadSongsToTry = async (value) => {
       },
     };
     const getSongs = await fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + value,
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem",
       options
     );
 
@@ -100,7 +106,7 @@ const loadSongsToTry = async (value) => {
       const songs = document.getElementById("tryThis");
       songs.innerHTML += `<div class="col-2 mb-2 ">
                                     
-                                        <img class="img-fluid" src="${song.album.cover_small}" alt="${song.album.title}" width="100%">
+                                        <img class="img-fluid rounded" src="${song.album.cover_small}" alt="${song.album.title}" width="100%">
                                         
                                         <div class="col-10 album-name">
                                             <span>${song.album.title}</span>
@@ -112,7 +118,40 @@ const loadSongsToTry = async (value) => {
   }
 };
 
-loadSongsToTry("eminem")
+
+
+const favouriteSongs = async () => {
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzNDM5MzdmZmQ0OTAwMTU4YTdhOWMiLCJpYXQiOjE2NTUyMDM2MTMsImV4cCI6MTY1NjQxMzIxM30.ozVgl19lKNBmQ3TeP-LfrHL4ak2PqE9Lj3nhDMHEg0k",
+      },
+    }
+
+    const response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=all",
+      options
+    );
+
+    const songs = await response.json();
+    console.log(songs)
+    const { data } = songs
+    const displaySongs = data.slice(0, 12)
+    displaySongs.forEach((song) => {
+      const popularAlbums = document.getElementById("favourites")
+      popularAlbums.innerHTML +=
+        `<span><p>${song.title_short}</p></span>`
+    })
+
+
+  } catch (err) {
+    console.log(err)
+
+  };
+}
+
 
 
 
