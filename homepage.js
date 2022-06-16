@@ -21,19 +21,19 @@ const loadAlbums = async () => {
 
 
     data.forEach((song) => {
-      const songs = document.querySelector(".container > .row");
+      const songs = document.getElementById("menu");
 
-     const getSong = document.createElement("div")
+     
 
 
-      getSong.innerHTML = `<div class="col-2">
-                                    
+      songs.innerHTML += `<div class="col-2">
+                                    <div class="col-2">
                                         <img src="${song.album.cover_medium}" alt="${song.album.title}">
-                                        
+                                        <div class="col-10">
                                             <span class>${song.album.title}</span>
+                                        </div>
                                     </div>  
-                                </div> `;
-      songs.appendChild(getSong)
+                                </div>`;
     });
   } catch (error) {
     console.log(error);
