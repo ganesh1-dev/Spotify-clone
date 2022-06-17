@@ -72,8 +72,12 @@ const loadRecently = async (query) => {
       songs.innerHTML += `<div class="col-2 mb-2 ">
                               <a href="./albumpage.html?albumID=${song.album.id}">
                                 <div class="card" >
-                               
-                                <img src="${song.album.cover_medium}" id="imgTop" class="card-img-top p-2" alt="${song.album.title}">
+                               <div class="example">
+                                <img src="${song.album.cover_medium}" id="imgTop" class="card-img-top" alt="${song.album.title}">
+                                <button class="mybutton"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+                                    <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                  </svg></button>
+                                  </div>
                                     <div class="card-body">
                                       <h5 class="card-title">${song.album.title}</h5>
                                       <p class="card-text">${Math.floor(song.duration / 60)} min </p>    
