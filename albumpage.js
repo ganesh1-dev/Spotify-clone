@@ -8,12 +8,11 @@ let changePage = () => {
       console.log(body)
 
       let jumbotronimage = document.querySelector(".jumbotron")
-      jumbotronimage.innerHTML = ` <div class="col-2 jumbotronimage">
+      jumbotronimage.innerHTML = `
       <img id="hero-img" src="${body.cover_medium}"
         class="jumbo-picture"
         alt="Hybrid theory album cover"
       />
-    </div>
       `
 
 
@@ -59,7 +58,7 @@ let changePage = () => {
         <br /><span class="singer-name"> ${body.artist.name}</span></span>
     </div>
     `
-    audioSong.innerHTML += `<audio controls>
+        audioSong.innerHTML += `<audio controls>
     <source src=${singleTrack.preview} type="audio/ogg">
     <source src=${singleTrack.preview} type="audio/mpeg">
   Your browser does not support the audio element.

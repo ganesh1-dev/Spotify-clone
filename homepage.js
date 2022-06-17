@@ -182,8 +182,8 @@ const favouriteSongs = async (query) => {
 
 window.onload = async () => {
   loadAlbums("love")
-  loadRecently("folk")
-  loadSongsToTry("country")
+  loadRecently("Tunico")
+  loadSongsToTry("But I Like It")
   favouriteSongs("romantic")
 }
 
