@@ -43,6 +43,11 @@ hr {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.card p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .card {
   background-color: inherit;
   position: relative;
@@ -66,7 +71,6 @@ a:hover {
 }
 footer {
   display: flex;
-  position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
