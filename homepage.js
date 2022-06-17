@@ -227,13 +227,6 @@ const allSongs = async (query) => {
                               </a >       
                           </div > `;
 
-                                      <p class="card-text">${Math.floor(song.duration / 60)} min </p>  
-                                      
-                                    </div>
-                                </div>
-                              </a>       
-                          </div>`;
-
     });
   } catch (error) {
     console.log(error);

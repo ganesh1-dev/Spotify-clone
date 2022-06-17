@@ -121,11 +121,8 @@ footer span {
 #search-div2 {
   display: flex;
   gap: 5px;
-  
 }
-#search-div2 .svg-check{
-  border: 2px solid white;
-}
+
 .visibility-hidden {
   visibility: hidden;
 }
@@ -133,7 +130,7 @@ footer span {
   cursor: pointer;
 }
 
- /* .play-btn {
+/* .play-btn {
   margin: 0 !important;
   width: 30px;
   height: 30px;
@@ -146,7 +143,7 @@ footer span {
 } */
 
 /* triangle */
- /* .play-btn::after {
+/* .play-btn::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -170,7 +167,6 @@ footer span {
 .example img {
   width: 100%;
   height: auto;
-  
 }
 
 .example .mybutton {
@@ -183,14 +179,13 @@ footer span {
   transition: 0.15s;
   background-color: rgb(93, 255, 93);
   border-radius: 50%;
-  
-  
-
 }
 .example:hover .mybutton {
-opacity: 1;
+  opacity: 1;
 }
 
 #searchNode {
+  width: 100px;
+  height: 20px;
   border-radius: 20px;
 }
