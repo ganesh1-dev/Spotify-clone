@@ -128,6 +128,38 @@
             right: 75px;
         }
 
+        .search-div {
+            flex-wrap: wrap;
+        }
+
+        .left-menu.mb-2.search-div {
+            display: flex;
+        }
+
+        #search-div2 {
+            display: flex;
+            gap: 5px;
+        }
+
+        .visibility-hidden {
+            visibility: hidden;
+        }
+
+        #search-div2 .svg-check:hover {
+            cursor: pointer;
+        }
+
+        .svg-check {
+            border: 2px solid white;
+        }
+
+        #searchNode {
+            width: 100px;
+            height: 20px;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
         footer span {
             font-size: 11pt;
         }
@@ -168,12 +200,21 @@
                     <i class="bi bi-house-door side-icons"></i>
                     <a href="/homepage.html"><span>Home</span></a>
                 </div>
-                <div class="left-menu mb-2">
-                    <button class="search-btn" onclick="findAlbum()">
+                <div class="left-menu mb-2 search-div">
+                    <button class="search-btn align-middle">
                         <i class="bi bi-search side-icons"></i>
                         <span>Search</span>
                     </button>
-                    <input type="text" placeholder="search">
+                    <div id="search-div2" class="visibility-hidden">
+                        <input type="text" placeholder="search" id="searchNode">
+                        <div class="svg-check mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                                class="bi bi-check-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
                 <div class="left-menu mb-2">
                     <i class="bi bi-collection side-icons"></i>

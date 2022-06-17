@@ -183,9 +183,15 @@ footer span {
 .example:hover .mybutton {
   opacity: 1;
 }
-
+.search-div {
+  flex-wrap: wrap;
+}
+.svg-check {
+  border: 2px solid white;
+}
 #searchNode {
   width: 100px;
   height: 20px;
+  margin-top: 10px;
   border-radius: 20px;
 }

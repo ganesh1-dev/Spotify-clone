@@ -146,3 +146,22 @@ function buttonHeart() {
 
   console.log("button play pressed, play was " + heart);
 }
+
+
+const displaySearch = () => {
+  const divNode = document.getElementById('search-div2')
+  divNode.classList.remove('visibility-hidden')
+
+}
+
+const input = document.querySelector("input");
+const button = document.querySelector(".search-btn")
+const checkDiv = document.querySelector("#search-div2 .svg-check")
+
+const findAlbum = (userEvent) => {
+  if (userEvent.type === "click") {
+    allSongs(input.value);
+  }
+}
+button.addEventListener("click", displaySearch)
+checkDiv.addEventListener("click", findAlbum)

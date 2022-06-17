@@ -83,7 +83,7 @@ const loadRecently = async (query) => {
 
                                       <p class="card-text">${song.artist.name} </p>                           
 
-                                      <p class="card-text">${Math.floor(song.duration / 60)} min </p>    
+                                        
                                                             
 
                                 </div>
@@ -132,7 +132,7 @@ const loadSongsToTry = async (query) => {
 
                                       <p class="card-text">${song.artist.name}</p>                           
 
-                                      <p class="card-text">${Math.floor(song.duration / 60)} min </p>      
+                                      
                                            
 
                                     </div>
@@ -254,4 +254,3 @@ checkDiv.addEventListener("click", findAlbum)
 
 
 
-songsSearched
