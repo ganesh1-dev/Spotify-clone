@@ -186,3 +186,7 @@ footer span {
 .example:hover .mybutton {
 opacity: 1;
 }
+
+#searchNode {
+  border-radius: 20px;
+}
