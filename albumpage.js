@@ -8,7 +8,7 @@ let changePage = () => {
       console.log(body)
 
       let jumbotronimage = document.querySelector(".jumbotron")
-      jumbotronimage.innerHTML = `   <div class="col-2 jumbotronimage">
+      jumbotronimage.innerHTML = ` <div class="col-2 jumbotronimage">
       <img id="hero-img" src="${body.cover_medium}"
         class="jumbo-picture" style="height:300px; width:250px;"
         alt="Hybrid theory album cover"
@@ -19,27 +19,27 @@ let changePage = () => {
 
       let titlesection = document.querySelector(".title-section1")
 
-      titlesection.innerHTML = `<div class="col-10 title-section1">
-      <div class="d-flex flex-column justify-content-end h-100">
-        <small>ALBUM</small>
-        <h1>${body.title}</h1>
-        <div>
-          <p>
-            <small
-              ><strong>
-                <img
-                  src="${body.cover_small}"
-                  
-                  alt=""
-                  style="border-radius: 2rem; height: 20px;"
-                  alt="Original Album Cover"
-                />${body.artist.name}. </strong
-              >${body.release_date}<strong> . </strong>22 songs<strong>
-          </p>
-        </div>
-      </div>
-    </div>
-      `
+      titlesection.innerHTML = `<div class="col-12 title-section1">
+                                  <div class="d-flex flex-column">
+                                    <small>ALBUM</small>
+                                    <h2>${body.title}</h2>
+                                    <div>
+                                      <p>
+                                        <small
+                                          ><strong>
+                                            <img class="mr-2"
+                                              src="${body.cover_small}"
+                                              
+                                              alt=""
+                                              style="border-radius: 2rem; height: 20px;"
+                                              alt="Original Album Cover"
+                                            />${body.artist.name}. </strong
+                                          >${body.release_date}<strong> . </strong>22 songs<strong>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>`
+
       const arrayOfTracks = body.tracks.data;
       for (let i = 1; i < arrayOfTracks.length - 1; i++) {
         const singleTrack = arrayOfTracks[i]
@@ -64,6 +64,41 @@ let changePage = () => {
 
 }
 
+const favouriteSongs = async (query) => {
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzNDM5MzdmZmQ0OTAwMTU4YTdhOWMiLCJpYXQiOjE2NTUyMDM2MTMsImV4cCI6MTY1NjQxMzIxM30.ozVgl19lKNBmQ3TeP-LfrHL4ak2PqE9Lj3nhDMHEg0k",
+      },
+    }
+
+    const response = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`,
+      options
+    );
+
+    const songs = await response.json();
+    console.log(songs)
+    const { data } = songs
+    const displaySongs = data.slice(0, 20)
+    displaySongs.forEach((song) => {
+      const popularAlbums = document.getElementById("favourites")
+      popularAlbums.innerHTML +=
+        `<span><p>${song.artist.name}</p></span>`
+    })
+
+
+  } catch (err) {
+    console.log(err)
+
+  };
+}
+
+window.onload = () => {
+  favouriteSongs("love")
+}
 function convertMinAndSec(duration) {
   const sec = parseInt(duration)
   let hours = Math.floor(sec / 3600);
