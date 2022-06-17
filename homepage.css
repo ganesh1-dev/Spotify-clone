@@ -111,3 +111,17 @@ footer span {
 #ptag {
   margin: 0;
 }
+.left-menu.mb-2.search-div {
+  display: flex;
+}
+#search-div2 {
+  display: flex;
+  gap: 5px;
+  
+}
+#search-div2 .svg-check{
+  border: 2px solid white;
+}
+.visibility-hidden {
+  visibility: hidden;
+}

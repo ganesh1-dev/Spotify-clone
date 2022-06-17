@@ -204,7 +204,11 @@ const allSongs = async (query) => {
   }
 };
 
-
+const displaySearch = () =>{
+  const divNode = document.getElementById('search-div2')
+  console.log(divNode)
+  divNode.classList.remove('visibility-hidden')
+}
 
 const input = document.querySelector("input");
 const button = document.querySelector(".search-btn")
@@ -214,7 +218,7 @@ const findAlbum = (userEvent) => {
     allSongs(input.value);
   }
 }
-button.addEventListener("click", findAlbum)
+button.addEventListener("click", displaySearch)
 
 
 
