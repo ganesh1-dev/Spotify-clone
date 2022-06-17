@@ -28,12 +28,21 @@
                         <i class="bi bi-house-door side-icons"></i>
                         <span>Home</span>
                     </div>
-                    <div class="left-menu mb-2">
-                        <button class="search-btn" onclick="findAlbum()">
+                    <div class="left-menu mb-2 search-div">
+                        <button class="search-btn" >
                             <i class="bi bi-search side-icons"></i>
                             <span>Search</span>
                         </button>
-                        <input type="text" placeholder="search">
+                        <div id="search-div2" class="visibility-hidden">
+                            <input type="text" placeholder="search">
+                            <div class="svg-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                    class="bi bi-check-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="left-menu mb-2">
                         <i class="bi bi-collection side-icons"></i>
@@ -203,6 +212,7 @@
                 style="height:4px; width:100%; border-width:0; color:rgb(255, 255, 255); background-color:rgb(255, 255, 255)">
         </div>
     </footer>
+    <button id="play-btn"></button>
     <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
