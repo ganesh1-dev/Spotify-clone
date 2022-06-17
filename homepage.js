@@ -228,7 +228,6 @@ const checkDiv = document.querySelector("#search-div2 .svg-check")
 const findAlbum = (userEvent) => {
   if (userEvent.type === "click") {
     allSongs(input.value);
-    alert('nice you added some music!')
   }
 }
 button.addEventListener("click", displaySearch)
