@@ -97,9 +97,9 @@ const favouriteSongs = async (query) => {
   };
 }
 
-window.onload = () => {
-  favouriteSongs("love")
-}
+
+
+
 function convertMinAndSec(duration) {
   const sec = parseInt(duration)
   let hours = Math.floor(sec / 3600);
@@ -124,6 +124,7 @@ function convertHrAndMin(duration) {
 
 window.onload = () => {
   changePage()
+  favouriteSongs("love")
 }
 
 
