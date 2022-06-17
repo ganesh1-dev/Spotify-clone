@@ -101,7 +101,7 @@
 
         footer {
             display: flex;
-            position: fixed;
+           
             bottom: 0;
             right: 0;
             left: 0;
@@ -143,6 +143,7 @@
             display: flex;
             gap: 25px;
             margin-top: 5px;
+            align-items: center;
         }
 
         .second-div .second-of-second hr {
@@ -152,6 +153,9 @@
 
         #ptag {
             margin: 0;
+        }
+        audio {
+            align-items: center;
         }
     </style>
 </head>
@@ -267,11 +271,15 @@
                 <section id="track-list-icons">
                     <div class="container-fluid">
                         <div class="row ml-2">
-                            <div class="col-11 justify-content-start">
+                            <div class="col-3 justify-content-start">
                                 <span class="ml-2" class="title-song"><span class="hashtag-title">#</span>
                                     TITLE</span>
                             </div>
-                            <div id="time-icon" class="col-1 album-col justify-content-end">
+                            <div class="col-5 justify-content-start">
+                                <span class="ml-2" class="title-song"><span class="hashtag-title">#</span>
+                                    TITLE</span>
+                            </div>
+                            <div id="time-icon" class="col-4 album-col justify-content-end">
                                 <span class="clock-icon">
                                     <i class="bi bi-clock"></i>
                                 </span>
@@ -289,8 +297,8 @@
 
                             </div>
 
-                            <div id="album-music-player" class="col-6">
-                                <div class="d-flex flex-column"></div>
+                            <div id="album-music-player" class="col-6 audioSong">
+                               
                             </div>
 
                             <div id="time" class="col-1 titleTime">
