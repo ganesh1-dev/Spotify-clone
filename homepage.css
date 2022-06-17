@@ -177,7 +177,7 @@ footer span {
   width: 55px;
   height: 55px;
   transition: 0.15s;
-  background-color: rgb(146, 200, 65);
+  background-color: rgb(93, 255, 93);
   border-radius: 50%;
   
   
@@ -185,4 +185,8 @@ footer span {
 }
 .example:hover .mybutton {
 opacity: 1;
+}
+
+#searchNode {
+  border-radius: 20px;
 }
