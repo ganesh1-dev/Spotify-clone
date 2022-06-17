@@ -206,19 +206,22 @@ const allSongs = async (query) => {
 
 const displaySearch = () =>{
   const divNode = document.getElementById('search-div2')
-  console.log(divNode)
   divNode.classList.remove('visibility-hidden')
+  
 }
 
 const input = document.querySelector("input");
 const button = document.querySelector(".search-btn")
+const checkDiv = document.querySelector("#search-div2 .svg-check")
 
 const findAlbum = (userEvent) => {
   if (userEvent.type === "click") {
     allSongs(input.value);
+    alert('nice you added some music!')
   }
 }
 button.addEventListener("click", displaySearch)
+checkDiv.addEventListener("click", findAlbum)
 
 
 

@@ -125,3 +125,6 @@ footer span {
 .visibility-hidden {
   visibility: hidden;
 }
+#search-div2 .svg-check:hover {
+  cursor: pointer;
+}
