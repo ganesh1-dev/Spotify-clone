@@ -34,21 +34,22 @@ let changePage = () => {
                                               style="border-radius: 2rem; height: 20px;"
                                               alt="Original Album Cover"
                                             />${body.artist.name}. </strong
-                                          >${body.release_date}<strong> . </strong>22 songs<strong>
+                                           >${new Date(body.release_date).getFullYear()}<strong> . </strong>${body.nb_tracks} songs<strong>.
+              </strong>${convertHrAndMin(body.duration)} <strong>
                                       </p>
                                     </div>
                                   </div>
                                 </div>`
 
       const arrayOfTracks = body.tracks.data;
-      for (let i = 1; i < arrayOfTracks.length - 1; i++) {
+      for (let i = 0; i < arrayOfTracks.length; i++) {
         const singleTrack = arrayOfTracks[i]
         let titleTime = document.querySelector(".titleTime")
         let titleBoby = document.querySelector(".titleBoby")
         titleBoby.innerHTML += `<div class="ml-3 pb-4">
        
        
-        <span class="track-num">${i}</span>
+        <span class="track-num">${i + 1}</span>
        
       
         <span class="album-song ml-4"><strong class="track-decoration">
@@ -110,8 +111,20 @@ function convertMinAndSec(duration) {
   return minutes + ':' + seconds; //  MM : SS
 }
 
+function convertHrAndMin(duration) {
+  const sec = parseInt(duration)
+  let hours = Math.floor(sec / 3600);
+  let minutes = Math.floor((sec - (hours * 3600)) / 60); // get minutes
+  let seconds = sec - (hours * 3600) - (minutes * 60);
+  if (hours < 10) { hours = hours; }
+  if (minutes < 10) { minutes = "0" + minutes; }
+  if (seconds < 10) { seconds = "0" + seconds; }
+  return hours + ' hr ' + minutes + ' min'; //  MM : SS
+}
 
-changePage()
+window.onload = () => {
+  changePage()
+}
 
 
 
