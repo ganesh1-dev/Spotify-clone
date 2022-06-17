@@ -46,6 +46,7 @@ let changePage = () => {
         const singleTrack = arrayOfTracks[i]
         let titleTime = document.querySelector(".titleTime")
         let titleBoby = document.querySelector(".titleBoby")
+        let audioSong = document.querySelector(".audioSong")
         titleBoby.innerHTML += `<div class="ml-3 pb-4">
        
        
@@ -58,6 +59,11 @@ let changePage = () => {
         <br /><span class="singer-name"> ${body.artist.name}</span></span>
     </div>
     `
+    audioSong.innerHTML += `<audio controls>
+    <source src=${singleTrack.preview} type="audio/ogg">
+    <source src=${singleTrack.preview} type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio> `
         titleTime.innerHTML += ` <div class="ml-8 pb-5 ">${convertMinAndSec(singleTrack.duration)}</div> `
       }
 
