@@ -14,8 +14,6 @@ let changePage = () => {
         alt="Hybrid theory album cover"
       />
       `
-
-
       let titlesection = document.querySelector(".title-section1")
 
       titlesection.innerHTML = `<div class="col-12 title-section1">
