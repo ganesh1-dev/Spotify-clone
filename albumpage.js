@@ -10,7 +10,7 @@ let changePage = () => {
       let jumbotronimage = document.querySelector(".jumbotron")
       jumbotronimage.innerHTML = ` <div class="col-2 jumbotronimage">
       <img id="hero-img" src="${body.cover_medium}"
-        class="jumbo-picture" style="height:300px; width:250px;"
+        class="jumbo-picture"
         alt="Hybrid theory album cover"
       />
     </div>

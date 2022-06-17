@@ -99,6 +99,10 @@
 
         }
 
+        .jumbotronimage {
+            object-fit: cover;
+        }
+
         footer {
             display: flex;
             bottom: 0;
@@ -184,6 +188,12 @@
         #ptag {
             margin: 0;
         }
+
+        @media only screen and (min-width: 1px) and (max-width: 1100px) {
+            footer {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -262,7 +272,7 @@
                 </div>
             </div>
 
-            <main class="col-10 wrapper flex-grow-1 pl-2 mt-4">
+            <main class="col-10 wrapper pl-2 mt-4">
                 <section id="album-page-hero">
                     <div class="container-fluid album-container">
                         <div class="row">
@@ -271,7 +281,7 @@
                                     src="https://i.pinimg.com/1200x/21/b1/c7/21b1c7f4af7c339fff746041a0e2403f.jpg"
                                     class="img-fluid" alt="Hybrid theory album cover" />
                             </div>
-                            <div class="col-md-8 col-lg-6 title-section1">
+                            <div class="col-md-8 col-lg-6 col-xl-4 title-section1">
 
                             </div>
                         </div>
