@@ -19,6 +19,12 @@ body {
 .spotify-icon {
   font-size: 35px;
 }
+/* .top-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 260px;
+} */
 hr {
   border-top: 1px solid white;
 }
@@ -30,18 +36,20 @@ hr {
 .logo-name {
   font-size: 35px;
 }
-.card {
-  background-color: inherit;
-}
+
 .card h5 {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-img:hover {
+.card {
+  background-color: inherit;
+  position: relative;
+  border: none;
+}
+.card:hover {
   box-shadow: 5px 3px 5px grey;
 }
-
 .album-name {
   flex-grow: 1;
   padding-left: 1rem;

@@ -70,7 +70,8 @@ const loadRecently = async (query) => {
       songs.innerHTML += `<div class="col-2 mb-2 ">
                               <a href="./albumpage.html?albumID=${song.album.id}">
                                 <div class="card" >
-                                <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
+                               
+                                <img src="${song.album.cover_medium}" id="imgTop" class="card-img-top p-2" alt="${song.album.title}">
                                     <div class="card-body">
                                       <h5 class="card-title">${song.album.title}</h5>
                                       <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
@@ -160,14 +161,60 @@ const favouriteSongs = async (query) => {
 
 window.onload = async () => {
   loadAlbums("love")
-  loadRecently("pop")
+  loadRecently("folk")
   loadSongsToTry("country")
   favouriteSongs("romantic")
 }
 
 
+const allSongs = async (query) => {
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        "Authorization":
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzM2RmMDdmZmQ0OTAwMTU4YTdhOWEiLCJpYXQiOjE2NTQ4NjUzOTMsImV4cCI6MTY1NjA3NDk5M30.2OFqiZlYFI8_pway6VuyyVMq_FoFqoK3aOgNgDlGntw",
+      },
+    };
+    const getSongs = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`,
+      options
+    );
+    const response = await getSongs.json();
+
+    const { data } = response
+
+    const displaySongs = data.slice(0, 6)
+    displaySongs.forEach((song) => {
+      const songs = document.getElementById("tryThis");
+      songs.innerHTML += `<div class="col-2 mb-2 ">
+                              <a href="./albumpage.html?albumID=${song.album.id}">
+                                <div class="card" >
+                                    <img src="${song.album.cover_medium}" class="card-img-top" alt="${song.album.title}">
+                                    <div class="card-body">
+                                      <h5 class="card-title">${song.album.title}</h5>
+                                      <p class="card-text">${Math.floor(song.duration / 60)} min </p>                           
+                                    </div>
+                                </div>
+                              </a>       
+                          </div>`;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 
+
+const input = document.querySelector("input");
+const button = document.querySelector(".search-btn")
+
+const findAlbum = (userEvent) => {
+  if (userEvent.type === "click") {
+    allSongs(input.value);
+  }
+}
+button.addEventListener("click", findAlbum)
 
 
 
