@@ -2,6 +2,15 @@
 body {
   color: white;
   background: rgb(39, 39, 39);
+  animation: 3s ease-out 0s 1 fadedOpacity;
+}
+@keyframes fadedOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .container {
   max-width: 100%;

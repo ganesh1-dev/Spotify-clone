@@ -19,8 +19,31 @@
         body {
             background-color: rgb(39, 39, 39);
             color: #ececec;
+            animation: 3s ease-out 0s 1 fadedOpacity;
         }
 
+        @keyframes fadedOpacity {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .linear-gradient {
+            /* background: linear-gradient(45deg,
+                    rgba(217, 2, 216, 1) 7%,
+                    rgba(116, 39, 167, 1) 38%,
+                    rgba(60, 0, 119, 1) 76%);
+            ; */
+            background: linear-gradient(#953479, #272727 40%);
+        }
+
+        .sidebar {
+            background-color: black;
+        }
 
         .container {
             max-width: 100%;
@@ -258,7 +281,7 @@
 
 
 
-        <div class="col-10">
+        <div class="col-10 linear-gradient">
             <div class="top-nav mt-3">
                 <div class="d-flex justify-content-between">
                     <div class="arrows">
