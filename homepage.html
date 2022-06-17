@@ -29,7 +29,7 @@
                         <span>Home</span>
                     </div>
                     <div class="left-menu mb-2">
-                        <button class="search-btn">
+                        <button class="search-btn" onclick="findAlbum()">
                             <i class="bi bi-search side-icons"></i>
                             <span>Search</span>
                         </button>
@@ -60,22 +60,24 @@
                 </div>
             </div>
             <div class="col-10">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <i class="bi bi-arrow-left-circle arrow-icons mr-2"></i>
-                            <i class="bi bi-arrow-right-circle arrow-icons"></i>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                            <button class="btn btn-outline-light mr-3 nav-buttons" type="submit">
-                                Login
-                            </button>
-                            <button class="btn btn-outline-light my-2 nav-buttons" type="submit">
-                                SignUp
-                            </button>
-                        </form>
-                    </div>
-                </nav>
+                <div class="top-nav">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <i class="bi bi-arrow-left-circle arrow-icons mr-2"></i>
+                                <i class="bi bi-arrow-right-circle arrow-icons"></i>
+                            </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <button class="btn btn-outline-light mr-3 nav-buttons" type="submit">
+                                    Login
+                                </button>
+                                <button class="btn btn-outline-light my-2 nav-buttons" type="submit">
+                                    SignUp
+                                </button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
                 <h1>Good morning</h1>
                 <section>
                     <div class="container mb-3">
@@ -100,6 +102,16 @@
                 <section>
                     <div class="container mb-3">
                         <div class="row" id="tryThis">
+
+                        </div>
+                    </div>
+                </section>
+                <h2>
+                    Rock Songs
+                </h2>
+                <section>
+                    <div class="container mb-3">
+                        <div class="row" id="rongs">
 
                         </div>
                     </div>
