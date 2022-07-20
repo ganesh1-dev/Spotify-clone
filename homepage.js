@@ -1,12 +1,11 @@
 /** @format */
 
-
 const loadAlbums = async (query) => {
   try {
     const options = {
       method: "GET",
       headers: {
-        "Authorization":
+        Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzM2RmMDdmZmQ0OTAwMTU4YTdhOWEiLCJpYXQiOjE2NTQ4NjUzOTMsImV4cCI6MTY1NjA3NDk5M30.2OFqiZlYFI8_pway6VuyyVMq_FoFqoK3aOgNgDlGntw",
       },
     };
@@ -17,10 +16,10 @@ const loadAlbums = async (query) => {
 
     const response = await getSongs.json();
 
-    const { data } = response
+    const { data } = response;
     console.log(data);
 
-    const viewImages = data.slice(0, 12)
+    const viewImages = data.slice(0, 12);
     viewImages.forEach((song) => {
       const songs = document.getElementById("menu");
       songs.innerHTML += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 d-flex">
@@ -41,7 +40,7 @@ const loadAlbums = async (query) => {
                             </a>
                           </div>`;
     });
-    // <button class="play-btn"></button> 
+    // <button class="play-btn"></button>
   } catch (error) {
     console.log(error);
   }
@@ -52,7 +51,7 @@ const loadRecently = async (query) => {
     const options = {
       method: "GET",
       headers: {
-        "Authorization":
+        Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzM2RmMDdmZmQ0OTAwMTU4YTdhOWEiLCJpYXQiOjE2NTQ4NjUzOTMsImV4cCI6MTY1NjA3NDk5M30.2OFqiZlYFI8_pway6VuyyVMq_FoFqoK3aOgNgDlGntw",
       },
     };
@@ -63,10 +62,10 @@ const loadRecently = async (query) => {
 
     const response = await getSongs.json();
 
-    const { data } = response
+    const { data } = response;
     console.log(data);
 
-    const viewImages = data.slice(0, 6)
+    const viewImages = data.slice(0, 6);
     viewImages.forEach((song) => {
       const songs = document.getElementById("recentlyViewed");
       songs.innerHTML += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 ">
@@ -101,7 +100,7 @@ const loadSongsToTry = async (query) => {
     const options = {
       method: "GET",
       headers: {
-        "Authorization":
+        Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzM2RmMDdmZmQ0OTAwMTU4YTdhOWEiLCJpYXQiOjE2NTQ4NjUzOTMsImV4cCI6MTY1NjA3NDk5M30.2OFqiZlYFI8_pway6VuyyVMq_FoFqoK3aOgNgDlGntw",
       },
     };
@@ -112,10 +111,10 @@ const loadSongsToTry = async (query) => {
 
     const response = await getSongs.json();
 
-    const { data } = response
+    const { data } = response;
     console.log(data);
 
-    const viewImages = data.slice(0, 6)
+    const viewImages = data.slice(0, 6);
     viewImages.forEach((song) => {
       const songs = document.getElementById("tryThis");
       songs.innerHTML += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-2 ">
@@ -132,9 +131,6 @@ const loadSongsToTry = async (query) => {
 
                                       <p class="card-text">${song.artist.name}</p>                           
 
-                                      
-                                           
-
                                     </div>
                                 </div>
                               </a>       
@@ -145,8 +141,6 @@ const loadSongsToTry = async (query) => {
   }
 };
 
-
-
 const favouriteSongs = async (query) => {
   try {
     const options = {
@@ -155,7 +149,7 @@ const favouriteSongs = async (query) => {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzNDM5MzdmZmQ0OTAwMTU4YTdhOWMiLCJpYXQiOjE2NTUyMDM2MTMsImV4cCI6MTY1NjQxMzIxM30.ozVgl19lKNBmQ3TeP-LfrHL4ak2PqE9Lj3nhDMHEg0k",
       },
-    }
+    };
 
     const response = await fetch(
       `https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`,
@@ -163,37 +157,31 @@ const favouriteSongs = async (query) => {
     );
 
     const songs = await response.json();
-    console.log(songs)
-    const { data } = songs
-    const displaySongs = data.slice(0, 20)
+    console.log(songs);
+    const { data } = songs;
+    const displaySongs = data.slice(0, 20);
     displaySongs.forEach((song) => {
-      const popularAlbums = document.getElementById("favourites")
-      popularAlbums.innerHTML +=
-        `<span><p>${song.artist.name}</p></span>`
-    })
-
-
+      const popularAlbums = document.getElementById("favourites");
+      popularAlbums.innerHTML += `<span><p>${song.artist.name}</p></span>`;
+    });
   } catch (err) {
-    console.log(err)
-
-  };
-}
-
+    console.log(err);
+  }
+};
 
 window.onload = async () => {
-  loadAlbums("love")
-  loadRecently("Tunico")
-  loadSongsToTry("But I Like It")
-  favouriteSongs("romantic")
-}
-
+  loadAlbums("love");
+  loadRecently("Tunico");
+  loadSongsToTry("But I Like It");
+  favouriteSongs("romantic");
+};
 
 const allSongs = async (query) => {
   try {
     const options = {
       method: "GET",
       headers: {
-        "Authorization":
+        Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzM2RmMDdmZmQ0OTAwMTU4YTdhOWEiLCJpYXQiOjE2NTQ4NjUzOTMsImV4cCI6MTY1NjA3NDk5M30.2OFqiZlYFI8_pway6VuyyVMq_FoFqoK3aOgNgDlGntw",
       },
     };
@@ -203,12 +191,11 @@ const allSongs = async (query) => {
     );
     const response = await getSongs.json();
 
-    const { data } = response
+    const { data } = response;
     const songs = document.getElementById("songsSearched");
-    const displaySongs = data.slice(0, 6)
-    songs.innerHTML = `<div class="col-12"><h2>${query} Album</h2></div>`
+    const displaySongs = data.slice(0, 6);
+    songs.innerHTML = `<div class="col-12"><h2>${query} Album</h2></div>`;
     displaySongs.forEach((song) => {
-
       songs.innerHTML += `<div class="col-2 mb-2 ">
                               <a href="./albumpage.html?albumID=${song.album.id}">
                                 <div class="card" >
@@ -226,7 +213,6 @@ const allSongs = async (query) => {
                                 </div >
                               </a >       
                           </div > `;
-
     });
   } catch (error) {
     console.log(error);
@@ -234,23 +220,18 @@ const allSongs = async (query) => {
 };
 
 const displaySearch = () => {
-  const divNode = document.getElementById('search-div2')
-  divNode.classList.remove('visibility-hidden')
-
-}
+  const divNode = document.getElementById("search-div2");
+  divNode.classList.remove("visibility-hidden");
+};
 
 const input = document.querySelector("input");
-const button = document.querySelector(".search-btn")
-const checkDiv = document.querySelector("#search-div2 .svg-check")
+const button = document.querySelector(".search-btn");
+const checkDiv = document.querySelector("#search-div2 .svg-check");
 
 const findAlbum = (userEvent) => {
   if (userEvent.type === "click") {
     allSongs(input.value);
   }
-}
-button.addEventListener("click", displaySearch)
-checkDiv.addEventListener("click", findAlbum)
-
-
-
-
+};
+button.addEventListener("click", displaySearch);
+checkDiv.addEventListener("click", findAlbum);
